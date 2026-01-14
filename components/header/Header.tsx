@@ -53,7 +53,7 @@ export default function Header() {
             {/* Login */}
             <Link
               href="/login"
-              className="hidden md:flex items-center gap-1 hover:text-orange-500 transition"
+              className="hidden md:flex items-center gap-1 hover:text-[#A35013] transition"
             >
               <User size={20} />
               Login
@@ -62,16 +62,16 @@ export default function Header() {
             {/* Wishlist */}
             <Link
               href="/wishlist"
-              className="hidden md:flex items-center gap-1 border border-pink-500 text-pink-500 px-3 py-1 rounded hover:bg-pink-50 transition"
+              className="hidden md:flex items-center gap-1 border border-[#A35013] text-[#A35013] px-3 py-1 rounded hover:bg-[#A35013]/10 transition"
             >
               <Heart size={18} />
               Wishlist
             </Link>
 
             {/* Cart */}
-            <Link href="/cart" className="relative hover:text-orange-500 transition">
+            <Link href="/cart" className="relative hover:text-[#A35013] transition">
               <ShoppingBag size={24} />
-              <span className="absolute -top-2 -right-2 bg-orange-500 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
+              <span className="absolute -top-2 -right-2 bg-[#A35013] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                 2
               </span>
             </Link>
@@ -94,25 +94,25 @@ export default function Header() {
       </div>
 
       {/* BOTTOM NAVBAR */}
-      <div className="bg-[#B65522]">
+      <div className="bg-[#A35013]">
         <nav className="max-w-7xl mx-auto px-4 md:px-6">
 
-          {/* Desktop Menu – CENTERED */}
+          {/* Desktop Menu */}
           <ul className="hidden md:flex justify-center gap-8 text-white py-3 text-sm font-medium">
-            <li><Link href="/buy-1-get-1" className="hover:text-gray-200 transition">Products</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Services</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Consultancy</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Horoscope</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Free Remedy Calculator</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Courses</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Membership Plans</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">About Us</Link></li>
-            <li><Link href="#" className="hover:text-gray-200 transition">Blog</Link></li>
+            <li><Link href="/buy-1-get-1" className="hover:text-[#f2c94c] transition">Products</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Services</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Consultancy</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Horoscope</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Free Remedy Calculator</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Courses</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Membership Plans</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">About Us</Link></li>
+            <li><Link href="#" className="hover:text-[#f2c94c] transition">Blog</Link></li>
           </ul>
 
           {/* Mobile Menu */}
           {menuOpen && (
-            <ul className="md:hidden flex flex-col gap-4 text-white py-4 text-sm font-medium">
+            <ul className="md:hidden flex flex-col gap-4 py-4 text-sm font-medium text-white bg-[#A35013]">
               <li><Link href="/buy-1-get-1">Products</Link></li>
               <li><Link href="#">Services</Link></li>
               <li><Link href="#">Consultancy</Link></li>
@@ -124,6 +124,7 @@ export default function Header() {
               <li><Link href="#">Blog</Link></li>
             </ul>
           )}
+
         </nav>
       </div>
 

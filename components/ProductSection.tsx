@@ -9,25 +9,21 @@ const products = [
   {
     name: "Rudraksha Report - A Complete Guide",
     price: "Rs. 0.00",
-    oldPrice: "Rs. 1,500.00",
     image: "/1.png",
   },
   {
     name: "Dhan Yog Bracelet - Brings Wealth",
     price: "Rs. 690.00",
-    oldPrice: "Rs. 1,050.00",
     image: "/2.png",
   },
   {
     name: "Green Aventurine Bracelet",
     price: "Rs. 690.00",
-    oldPrice: "Rs. 996.00",
     image: "/3.png",
   },
   {
     name: "7 Mukhi Rudraksha - Nepal",
     price: "Rs. 690.00",
-    oldPrice: "Rs. 960.00",
     image: "/4.png",
   },
 ];
@@ -81,12 +77,9 @@ export default function ProductSection() {
                   {product.name}
                 </h3>
 
-                <div className="mt-1 flex justify-center space-x-2 items-center">
+                <div className="mt-2">
                   <span className="text-sm font-semibold text-red-600">
                     {product.price}
-                  </span>
-                  <span className="text-xs line-through text-gray-400">
-                    {product.oldPrice}
                   </span>
                 </div>
 
@@ -118,12 +111,9 @@ export default function ProductSection() {
                       {product.name}
                     </h3>
 
-                    <div className="mt-1 flex justify-center space-x-2 items-center">
+                    <div className="mt-2">
                       <span className="text-base font-semibold text-red-600">
                         {product.price}
-                      </span>
-                      <span className="text-sm line-through text-gray-400">
-                        {product.oldPrice}
                       </span>
                     </div>
 

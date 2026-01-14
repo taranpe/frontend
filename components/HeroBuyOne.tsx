@@ -50,17 +50,29 @@ export default function HeroBuyOne() {
 
   return (
     <div className="w-full overflow-hidden">
-      <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div key={index} className="flex justify-center">
-            <img
-              src={slide.src}
-              alt={slide.alt}
-              className="object-contain w-auto h-auto max-w-full max-h-[90vh]"
-            />
-          </div>
-        ))}
-      </Slider>
+      {/* Desktop Slider */}
+      <div className="hidden md:block">
+        <Slider {...settings}>
+          {slides.map((slide, index) => (
+            <div key={index} className="flex justify-center">
+              <img
+                src={slide.src}
+                alt={slide.alt}
+                className="object-contain w-auto h-auto max-w-full max-h-[90vh]"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+
+      {/* Mobile Single Image */}
+      <div className="block md:hidden">
+        <img
+          src="/mb.jpg"
+          alt="Banner 1"
+          className="w-full h-auto object-cover max-h-[70vh]"
+        />
+      </div>
     </div>
   );
 }
