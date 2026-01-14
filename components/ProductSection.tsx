@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 const products = [
   {
     name: "Rudraksha Report - A Complete Guide",
-    price: "Rs. 0.00",
+    price: "Rs. 17000",
     image: "/1.png",
   },
   {
