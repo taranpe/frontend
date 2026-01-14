@@ -7,6 +7,8 @@ import Faq from "@/components/faq";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import BadgesSection from "@/components/BadgesSection";
 import AboutUsSection from "@/components/AboutUsSection";
+import Cards from "@/components/Cards";
+import Form from "@/components/Form";
 
 export default function HomePage() {
   return (
@@ -17,6 +19,9 @@ export default function HomePage() {
       <ProductSection />
       <Faq />
       <ServiceSection />
+       <Form/>
+      <Cards/>
+     
       <WhyChooseUs />
       <Testimonials />
       
