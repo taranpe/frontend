@@ -30,9 +30,9 @@ function PrevArrow(props: any) {
 
 export default function HeroBuyOne() {
   const slides = [
-    { src: "/Banner1.jpg", alt: "Banner 1" },
-    { src: "/Banner2.jpg", alt: "Banner 2" },
-    { src: "/Banner3.jpg", alt: "Banner 3" },
+    { src: "/banner1.jpg", alt: "Banner 1" },
+    { src: "/banner2.jpg", alt: "Banner 2" },
+    { src: "/banner3.jpg", alt: "Banner 3" },
   ];
 
   const settings = {
