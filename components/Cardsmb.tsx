@@ -45,19 +45,19 @@ export default function ImageMarquee() {
   }, []);
 
   return (
-    <section className="py-12 bg-white w-full hidden md:block">
+    <section className="py-12 bg-white w-full md:hidden">
       <div className="overflow-hidden relative w-full">
         <div
           ref={marqueeRef}
-          className="flex space-x-6 overflow-x-auto scrollbar-none w-full"
+          className="flex space-x-4 overflow-x-auto scrollbar-none w-full"
           style={{ scrollBehavior: "smooth" }}
         >
           {/* duplicate images for infinite scroll */}
           {[...images, ...images].map((src, idx) => (
             <div
               key={idx}
-              className="flex-shrink-0 w-1/3 sm:w-1/2 md:w-1/3"
-              style={{ minWidth: "calc(33.333% - 1.5rem)" }} // 3 images visible on desktop
+              className="flex-shrink-0 w-full"
+              style={{ minWidth: "100%" }} // 1 image visible on mobile
             >
               <div className="border border-gray-300 rounded-xl overflow-hidden bg-white">
                 <img

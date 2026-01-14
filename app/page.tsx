@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import BadgesSection from "@/components/BadgesSection";
 import AboutUsSection from "@/components/AboutUsSection";
 import Cards from "@/components/Cards";
+import Cardsmb from "@/components/Cardsmb";
 import Form from "@/components/Form";
 
 export default function HomePage() {
@@ -21,6 +22,7 @@ export default function HomePage() {
       <ServiceSection />
        <Form/>
       <Cards/>
+      <Cardsmb/>
      
       <WhyChooseUs />
       <Testimonials />
