@@ -1,66 +1,106 @@
+"use client";
+
 import Link from "next/link";
+import { Phone, Clock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0b0b0b] text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 py-14">
+    <footer className="bg-gradient-to-b from-[#0b1f36] to-[#0a2a4f] text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 py-16">
 
         {/* TOP GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
 
-          {/* BRAND */}
+          {/* ABOUT */}
           <div>
-            <h3 className="text-white text-xl font-semibold mb-4">
-              Ask Rajni
+            <h3 className="text-white text-lg font-semibold mb-4">
+           About Ask Rajni
             </h3>
-            <p className="text-sm leading-relaxed text-gray-400">
-              Trusted astrology guidance for love, career, marriage and life
-              decisions. Get clarity through ancient wisdom.
+            <p className="text-sm leading-relaxed text-gray-300">
+             Astrologer Rajni Kapoor is a renowned name in the world of astrology, known for her scientific approach deep wisdom, and compassionate guidance. With 21+ years of experience and over 21000 unique horoscopes analyzed, she stands as one of the most trusted astrologers in Ludhiana and across India.
             </p>
           </div>
 
-          {/* QUICK LINKS */}
+          {/* POPULAR PRODUCTS */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase">
-              Quick Links
+            <h4 className="text-white text-lg font-semibold mb-4">
+              Popular Products
             </h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-white">Home</Link></li>
-              <li><Link href="/collections" className="hover:text-white">Collections</Link></li>
-              <li><Link href="/about" className="hover:text-white">About Us</Link></li>
-              <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+              {[
+                { name: "Gemstones", href: "/collections/gemstones" },
+                { name: "Rudraksha", href: "/collections/rudraksha" },
+                { name: "Lucky Bracelet", href: "/collections/bracelet" },
+                { name: "Vastu Remedies", href: "/collections/vastu" },
+                { name: "Services", href: "/services" },
+                { name: "Horoscope", href: "/horoscope" },
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <span className="text-blue-400">✦</span>
+                  <Link href={item.href} className="hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* SERVICES */}
+          {/* SITE LINKS */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase">
-              Services
+            <h4 className="text-white text-lg font-semibold mb-4">
+              Site Links
             </h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/collections/love" className="hover:text-white">Love Astrology</Link></li>
-              <li><Link href="/collections/career" className="hover:text-white">Career Guidance</Link></li>
-              <li><Link href="/collections/marriage" className="hover:text-white">Marriage Matching</Link></li>
-              <li><Link href="/collections/health" className="hover:text-white">Health Reading</Link></li>
+              {[
+                { name: "About Us", href: "/about" },
+                { name: "Help", href: "/help" },
+                { name: "Contact Us", href: "/contact" },
+                { name: "Privacy Policy", href: "/privacy-policy" },
+                { name: "Terms of Service Policy", href: "/terms" },
+                { name: "Blogs", href: "/blogs" },
+                { name: "Quick Payments Link", href: "/payments" },
+              ].map((item, i) => (
+                <li key={i} className="flex items-center gap-2">
+                  <span className="text-blue-400">✦</span>
+                  <Link href={item.href} className="hover:text-white">
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* CONTACT */}
+          {/* CUSTOMER SUPPORT */}
           <div>
-            <h4 className="text-white text-sm font-semibold mb-4 uppercase">
-              Contact
+            <h4 className="text-white text-lg font-semibold mb-4">
+              Customer Support
             </h4>
-            <ul className="space-y-2 text-sm text-gray-400">
-              <li>Email: info@askrajni.com</li>
-              <li>WhatsApp: +91-6239790901</li>
-              <li>Location:Shop No. 3, Ground Floor, MIG Flat No. 3347, Phase 2, Adjoining Gate No. 7, Urban Estate Dugri, Ludhiana, 141013 </li>
+
+            
+
+            <ul className="space-y-3 text-sm text-gray-300">
+              <li className="flex items-center gap-3">
+                <Phone size={16} />
+                <span>+91-6239790901</span>
+              </li>
+              
+              <li className="flex items-start gap-3">
+                <Clock size={16} className="mt-0.5" />
+                <span>
+                  Mon – Fri : 9AM – 6PM <br />
+                  Sat : 9AM – 5PM
+                </span>
+              </li>
             </ul>
+
+            {/* SOCIAL ICONS */}
+            
           </div>
 
         </div>
 
-        {/* DIVIDER */}
-        <div className="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
+        {/* BOTTOM */}
+        <div className="border-t border-white/10 mt-12 pt-6 text-center text-sm text-gray-400">
           © {new Date().getFullYear()} Ask Rajni. All rights reserved.
         </div>
 

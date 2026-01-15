@@ -8,7 +8,7 @@ import Latest from "@/components/Latest";
 import Angelic from "@/components/Angelic";
 import Bannertwo from "@/components/Bannertwo";
 import Aura from "@/components/Aura";
-import Testimonials from "@/components/Testimonials";
+// import Testimonials from "@/components/Testimonials";
 import BenefitsSection from "@/components/BenefitsSection";
 
 export default function HomePage() {
@@ -45,7 +45,7 @@ export default function HomePage() {
       <Aura />
 
       {/* TESTIMONIALS */}
-      <Testimonials />
+      {/* <Testimonials /> */}
 
       {/* BENEFITS / TRUST BADGES */}
       <BenefitsSection />
