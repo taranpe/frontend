@@ -45,7 +45,7 @@ export default function TestimonialSection() {
           <h2 className="text-3xl md:text-4xl font-semibold text-gray-900">
             Voices of Gratitude
           </h2>
-          <p className="mt-2 text-sm text-gray-600 max-w-xl mx-auto">
+          <p className="mt-2 text-base text-gray-600 max-w-xl mx-auto">
             Real experiences from people who found clarity and guidance through our services
           </p>
         </div>
@@ -55,19 +55,27 @@ export default function TestimonialSection() {
           {testimonials.map((item, index) => (
             <div
               key={index}
-              className="bg-[#f3f3f1] rounded-xl p-7 text-left"
+              className="bg-[#f3f3f1] rounded-xl p-8 text-left"
             >
-              <div className="flex gap-1 mb-4">
+              {/* BIGGER + BOLD STARS */}
+              <div className="flex gap-1 mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="text-orange-500 text-sm">★</span>
+                  <span
+                    key={i}
+                    className="text-orange-500 text-lg font-bold"
+                  >
+                    ★
+                  </span>
                 ))}
               </div>
 
-              <p className="text-sm text-gray-800 leading-relaxed mb-8">
+              {/* BIGGER TEXT */}
+              <p className="text-base text-gray-800 leading-relaxed mb-10">
                 {item.text}
               </p>
 
-              <p className="text-sm font-semibold text-black">
+              {/* BOLDER NAME */}
+              <p className="text-base font-semibold text-black">
                 {item.name}
               </p>
             </div>
@@ -85,18 +93,26 @@ export default function TestimonialSection() {
                 key={index}
                 className="min-w-full px-1"
               >
-                <div className="bg-[#f3f3f1] rounded-xl p-7 text-left">
-                  <div className="flex gap-1 mb-4">
+                <div className="bg-[#f3f3f1] rounded-xl p-8 text-left">
+                  {/* BIGGER + BOLD STARS */}
+                  <div className="flex gap-1 mb-5">
                     {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-orange-500 text-sm">★</span>
+                      <span
+                        key={i}
+                        className="text-orange-500 text-lg font-bold"
+                      >
+                        ★
+                      </span>
                     ))}
                   </div>
 
-                  <p className="text-sm text-gray-800 leading-relaxed mb-8">
+                  {/* BIGGER TEXT */}
+                  <p className="text-base text-gray-800 leading-relaxed mb-10">
                     {item.text}
                   </p>
 
-                  <p className="text-sm font-semibold text-black">
+                  {/* BOLDER NAME */}
+                  <p className="text-base font-semibold text-black">
                     {item.name}
                   </p>
                 </div>
@@ -107,14 +123,14 @@ export default function TestimonialSection() {
           {/* ARROWS */}
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-9 h-9 flex items-center justify-center text-gray-700"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 text-xl"
           >
             ‹
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-9 h-9 flex items-center justify-center text-gray-700"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full w-10 h-10 flex items-center justify-center text-gray-700 text-xl"
           >
             ›
           </button>

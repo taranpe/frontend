@@ -2,46 +2,35 @@
 
 import Link from "next/link";
 import Slider from "react-slick";
+import { ArrowRight } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const products = [
-  {
-    name: "Rudraksha Report - A Complete Guide",
-    price: "Rs. 17000",
-    image: "/1.png",
-  },
-  {
-    name: "Dhan Yog Bracelet - Brings Wealth",
-    price: "Rs. 690.00",
-    image: "/2.png",
-  },
-  {
-    name: "Green Aventurine Bracelet",
-    price: "Rs. 690.00",
-    image: "/3.png",
-  },
-  {
-    name: "7 Mukhi Rudraksha - Nepal",
-    price: "Rs. 690.00",
-    image: "/4.png",
-  },
+const collections = [
+  { name: "Rudrakshas", image: "https://astrotalk.store/cdn/shop/files/7_mukhi_n.webp?v=1754983985&width=750", href: "/collections/rudrakshas" },
+  { name: "Bracelet", image: "https://images-cdn.ubuy.co.in/667e0360751611106f1bd7ea-ronglry-zodiac-bracelet-for-women-men-12.jpg", href: "/collections/bracelet" },
+  { name: "Gemstones", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQTANwlWQEKMT3Duy86mu1AAbSTVH_J2QnYQ&s", href: "/collections/gemstones" },
+  { name: "Vastu Remedies", image: "https://m.media-amazon.com/images/I/51ZhWXuVn7L._SY300_SX300_QL70_ML2_.jpg", href: "/collections/vastu" },
+  { name: "Crystal Balls", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIfA_q_0yA29X-szID7fu-VWtrmhOYlMYskQ&s", href: "/collections/crystal-balls" },
+  { name: "Activator", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3pKs4k5aMl_yKwOagDeVCYq1_lbUs1Oel0Q&s", href: "/collections/activator" },
 ];
 
-export default function ProductSection() {
+export default function PerfectSelections() {
   const settings = {
     dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
+    infinite: false,
+    speed: 400,
+    slidesToShow: 6,
     slidesToScroll: 1,
     arrows: true,
     responsive: [
       {
         breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        },
+        settings: { slidesToShow: 4 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2 },
       },
     ],
   };
@@ -53,79 +42,69 @@ export default function ProductSection() {
         {/* HEADING */}
         <div className="mb-8 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
-            Our Astrology Services You Can Trust
+            Perfect Selections for You
           </h2>
         </div>
 
-        {/* ================= MOBILE GRID (2x2) ================= */}
-        <div className="grid grid-cols-2 gap-4 md:hidden">
-          {products.slice(0, 4).map((product, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden bg-white"
-            >
-              <div className="w-full h-[200px] overflow-hidden">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="p-3 text-center">
-                <h3 className="text-xs font-medium text-gray-900 truncate">
-                  {product.name}
-                </h3>
-
-                <div className="mt-2">
-                  <span className="text-sm font-semibold text-red-600">
-                    {product.price}
-                  </span>
-                </div>
-
-                <button className="mt-3 w-full rounded-md border border-[#B84612] text-[#B84612] py-1.5 text-xs font-medium hover:bg-[#B84612] hover:text-white transition">
-                  Buy Now
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* ================= DESKTOP SLIDER ================= */}
+        {/* DESKTOP */}
         <div className="hidden md:block">
           <Slider {...settings}>
-            {products.map((product, index) => (
-              <div key={index} className="px-2 flex justify-center">
-                <div className="border border-gray-200 rounded-lg overflow-hidden bg-white w-[380px]">
+            {collections.map((item, index) => (
+              <div key={index} className="px-2">
+                <div className="text-center group">
 
-                  <div className="w-full h-[400px] overflow-hidden">
+                  {/* IMAGE WITH HOVER */}
+                  <div className="rounded-xl overflow-hidden bg-gray-50 transition-all duration-300 group-hover:shadow-lg">
                     <img
-                      src={product.image}
-                      alt={product.name}
-                      className="w-full h-full object-cover"
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-[180px] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
-                  <div className="p-4 text-center">
-                    <h3 className="text-sm font-medium text-gray-900 truncate">
-                      {product.name}
-                    </h3>
+                  {/* TITLE */}
+                  <h3 className="mt-3 text-base font-semibold text-gray-900">
+                    {item.name}
+                  </h3>
 
-                    <div className="mt-2">
-                      <span className="text-base font-semibold text-red-600">
-                        {product.price}
-                      </span>
-                    </div>
-
-                    <button className="mt-4 w-full rounded-md border border-[#B84612] text-[#B84612] py-2 text-sm font-medium hover:bg-[#B84612] hover:text-white transition">
-                      Buy Now
-                    </button>
-                  </div>
+                  {/* LINK */}
+                  <Link
+                    href={item.href}
+                    className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-gray-700 underline underline-offset-4 hover:text-black transition"
+                  >
+                    Shop Collection <ArrowRight size={14} />
+                  </Link>
 
                 </div>
               </div>
             ))}
           </Slider>
+        </div>
+
+        {/* MOBILE */}
+        <div className="flex gap-4 overflow-x-auto md:hidden scrollbar-hide">
+          {collections.map((item, index) => (
+            <div key={index} className="min-w-[200px] text-center group">
+              <div className="rounded-xl overflow-hidden bg-gray-50 transition-all duration-300 group-hover:shadow-md">
+                <img
+                  src={item.image}
+                  alt={item.name}
+                  className="w-full h-[170px] object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+
+              <h3 className="mt-3 text-base font-semibold text-gray-900">
+                {item.name}
+              </h3>
+
+              <Link
+                href={item.href}
+                className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-gray-700 underline underline-offset-4"
+              >
+                Shop Collection <ArrowRight size={14} />
+              </Link>
+            </div>
+          ))}
         </div>
 
       </div>

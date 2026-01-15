@@ -2,33 +2,53 @@ import HeroBuyOne from "@/components/HeroBuyOne";
 import ShopByCollection from "@/components/ShopByCollection";
 import ProductSection from "@/components/ProductSection";
 import ServiceSection from "@/components/ServiceSection";
+import Todaypick from "@/components/Todaypick";
+import Banner from "@/components/Banner";
+import Latest from "@/components/Latest";
+import Angelic from "@/components/Angelic";
+import Bannertwo from "@/components/Bannertwo";
+import Aura from "@/components/Aura";
 import Testimonials from "@/components/Testimonials";
-import Faq from "@/components/faq";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import BadgesSection from "@/components/BadgesSection";
-import AboutUsSection from "@/components/AboutUsSection";
-import Cards from "@/components/Cards";
-import Cardsmb from "@/components/Cardsmb";
-import Form from "@/components/Form";
+import BenefitsSection from "@/components/BenefitsSection";
 
 export default function HomePage() {
   return (
     <>
+      {/* HERO / OFFER */}
       <HeroBuyOne />
+
+      {/* SHOP BY CATEGORY */}
       <ShopByCollection />
-      <AboutUsSection/>
+
+      {/* FEATURED PRODUCTS */}
       <ProductSection />
-      <Faq />
+
+      {/* SERVICES */}
       <ServiceSection />
-       <Form/>
-      <Cards/>
-      <Cardsmb/>
-     
-      <WhyChooseUs />
+
+      {/* TODAY'S PICK */}
+      <Todaypick />
+
+      {/* PROMOTIONAL BANNER */}
+      <Banner />
+
+      {/* LATEST COLLECTION */}
+      <Latest />
+
+      {/* ANGELIC COLLECTION */}
+      <Angelic />
+
+      {/* SECOND BANNER */}
+      <Bannertwo />
+
+      {/* AURA COLLECTION */}
+      <Aura />
+
+      {/* TESTIMONIALS */}
       <Testimonials />
-      
-<BadgesSection />
-      
+
+      {/* BENEFITS / TRUST BADGES */}
+      <BenefitsSection />
     </>
   );
 }

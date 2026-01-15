@@ -35,16 +35,18 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Search */}
-          <div className="hidden md:flex flex-1 max-w-xl mx-6 border rounded-full overflow-hidden shadow-sm">
-            <input
-              type="text"
-              placeholder="Search product"
-              className="w-full px-4 py-2 outline-none text-gray-700"
-            />
-            <button className="px-4 bg-gray-100 hover:bg-gray-200 transition">
-              <Search size={20} />
-            </button>
+          {/* ===== DESKTOP SEARCH (EXACT IMAGE STYLE) ===== */}
+          <div className="hidden md:flex flex-1 max-w-[420px] mx-6">
+            <div className="flex w-full border border-gray-200 rounded-md overflow-hidden bg-white">
+              <input
+                type="text"
+                placeholder="Search product"
+                className="flex-1 px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none"
+              />
+              <button className="w-12 flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition">
+                <Search size={18} className="text-gray-600" />
+              </button>
+            </div>
           </div>
 
           {/* Icons */}
@@ -78,16 +80,16 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Mobile Search */}
+        {/* ===== MOBILE SEARCH (SAME STYLE) ===== */}
         <div className="md:hidden px-4 pb-3">
-          <div className="flex border rounded-full overflow-hidden">
+          <div className="flex border border-gray-200 rounded-md overflow-hidden bg-white">
             <input
               type="text"
               placeholder="Search product"
-              className="w-full px-4 py-2 outline-none text-gray-700"
+              className="flex-1 px-4 py-2 text-sm text-gray-700 placeholder-gray-400 focus:outline-none"
             />
-            <button className="px-4 bg-gray-100 hover:bg-gray-200 transition">
-              <Search size={18} />
+            <button className="w-12 flex items-center justify-center bg-gray-200 hover:bg-gray-300 transition">
+              <Search size={18} className="text-gray-600" />
             </button>
           </div>
         </div>
