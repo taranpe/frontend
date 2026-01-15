@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 
 const collections = [
@@ -16,25 +18,40 @@ export default function ShopByCollection() {
     <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-4">
 
-        {/* CENTERED ICON LIST */}
-        <div className="flex gap-4 md:gap-6 justify-center overflow-x-auto scrollbar-hide">
+        {/* DESKTOP VIEW */}
+        <div className="hidden md:flex gap-6 justify-center">
           {collections.map((item, index) => (
-            <Link
-              key={index}
-              href={item.href}
-              className="flex-shrink-0 text-center group"
-            >
-              {/* ICON */}
-              <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mx-auto">
+            <Link key={index} href={item.href} className="text-center group">
+              <div className="w-28 h-28 rounded-full overflow-hidden mx-auto bg-gray-50">
                 <img
                   src={item.img}
                   alt={item.name}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
+              <p className="mt-3 text-base font-semibold text-gray-800">
+                {item.name}
+              </p>
+            </Link>
+          ))}
+        </div>
 
-              {/* BOLDER TEXT */}
-              <p className="mt-3 text-sm md:text-base font-semibold text-gray-800 whitespace-nowrap">
+        {/* MOBILE VIEW (CIRCLE + HORIZONTAL SCROLL) */}
+        <div className="flex gap-4 overflow-x-auto md:hidden scrollbar-hide">
+          {collections.map((item, index) => (
+            <Link
+              key={index}
+              href={item.href}
+              className="flex-shrink-0 text-center"
+            >
+              <div className="w-20 h-20 rounded-full overflow-hidden mx-auto bg-gray-50">
+                <img
+                  src={item.img}
+                  alt={item.name}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <p className="mt-2 text-xs font-semibold text-gray-800 whitespace-nowrap">
                 {item.name}
               </p>
             </Link>
